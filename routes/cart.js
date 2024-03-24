@@ -48,4 +48,44 @@ cartRouter.post("/api/user/:userId/cart", async (req, res) => {
   }
 });
 
+/* -------------------------------------------------------------------------- */
+/*                                delete item from cart                       */
+/* -------------------------------------------------------------------------- */
+
+cartRouter.delete("/api/user/:userId/cart/:itemId", async (req, res) => {
+   try {
+     const userId = req.params.userId;
+     const itemId = req.params.itemId;
+ 
+     // Retrieve the user from the database
+     const user = await User.findById(userId);
+     if (!user) {
+       return res.status(404).json({ message: "User not found" });
+     }
+ 
+     // Find the index of the item to be deleted in the cart array
+     const index = user.cart.findIndex(item => item.id === itemId);
+     if (index === -1) {
+       return res.status(404).json({ message: "Item not found in the cart" });
+     }
+ 
+     // Remove the item from the cart array
+     user.cart.splice(index, 1);
+ 
+     // Save the updated user document back to the database
+     await user.save();
+ 
+     // Respond with success message
+     res.status(200).json({ message: "Item removed from the cart successfully" });
+   } catch (error) {
+     // Handle any errors
+     console.error("Error removing item from cart:", error);
+     res.status(500).json({
+       statusCode: 500,
+       error: "Internal Server Error",
+       message: error.message,
+     });
+   }
+ });
+
 module.exports = cartRouter;
