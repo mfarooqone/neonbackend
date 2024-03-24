@@ -3,6 +3,7 @@
 const express = require("express");
 const cors = require("cors");
 const authRouter = require("./routes/auth");
+const cartRoute = require("./routes/cart");
 const { default: mongoose } = require("mongoose");
 
 /// INIT
@@ -16,6 +17,7 @@ const DB =
 app.use(express.json());
 app.use(cors());
 app.use(authRouter);
+app.use(cartRoute);
 
 
 
