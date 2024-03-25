@@ -3,6 +3,10 @@ const User = require("../models/user");
 const { v4: uuidv4 } = require("uuid"); // Import UUID library
 const cartRouter = express.Router();
 
+/* -------------------------------------------------------------------------- */
+/*                                 add to cart                                */
+/* -------------------------------------------------------------------------- */
+
 cartRouter.post("/api/user/:userId/cart", async (req, res) => {
   try {
     const userId = req.params.userId;
@@ -105,6 +109,40 @@ cartRouter.delete("/api/user/:userId/cart/:itemId", async (req, res) => {
   } catch (error) {
     // Handle any errors
     console.error("Error removing item from cart:", error);
+    res.status(500).json({
+      statusCode: 500,
+      error: "Internal Server Error",
+      message: error.message,
+    });
+  }
+});
+
+///
+
+/* -------------------------------------------------------------------------- */
+/*                                get user cart                               */
+/* -------------------------------------------------------------------------- */
+
+cartRouter.get("/api/user/:userId/cart", async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    // Retrieve the user from the database
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({
+        statusCode: 404,
+        error: "Not found",
+        message: "User not found",
+      });
+    }
+
+    // Return the user's cart data
+
+    res.status(200).json({ cart: user.cart });
+  } catch (error) {
+    // Handle any errors
+    console.error("Error fetching user cart data:", error);
     res.status(500).json({
       statusCode: 500,
       error: "Internal Server Error",
