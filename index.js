@@ -5,7 +5,7 @@ const cors = require("cors");
 const authRouter = require("./routes/auth");
 const cartRoute = require("./routes/cart");
 const aboutUsRouter = require("./routes/pages/about_us");
-const shippingRouter = require("./routes/pages/shipping_policy");
+const shippingRouter = require("./routes/policies/shipping_policy");
 const { default: mongoose } = require("mongoose");
 
 /// INIT
