@@ -1,7 +1,7 @@
 const express = require("express");
 const refundRouter = express.Router();
 
-shippingRouter.get("/api/policies/refund-policy", (req, res) => {
+refundRouter.get("/api/policies/refund-policy", (req, res) => {
    try {
       const refundPolicyText = `Refund Policy:
   

@@ -11,6 +11,7 @@ const refundRouter = require("./routes/policies/refund_policy");
 const privacyRouter = require("./routes/policies/privacy_policy");
 const shippingRouter = require("./routes/policies/shipping_policy");
 
+
 /// INIT
 const PORT = 3030;
 const app = express();
@@ -32,6 +33,7 @@ app.use(aboutUsRouter);
 app.use(contactUsRouter);
 
 // policies
+
 
 app.use(shippingRouter);
 app.use(refundRouter);
