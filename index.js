@@ -7,7 +7,7 @@ const cartRoute = require("./routes/cart");
 const { default: mongoose } = require("mongoose");
 
 /// INIT
-const PORT = 8080;
+const PORT = 3030;
 const app = express();
 const DB =
   "mongodb+srv://farooqone:iphonepakistaN@cluster0.yehdinj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
