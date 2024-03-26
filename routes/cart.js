@@ -122,7 +122,6 @@ cartRouter.delete("/api/user/:userId/cart/:itemId", async (req, res) => {
 /* -------------------------------------------------------------------------- */
 /*                                get user cart                               */
 /* -------------------------------------------------------------------------- */
-
 cartRouter.get("/api/user/:userId/cart", async (req, res) => {
   try {
     const userId = req.params.userId;
@@ -137,9 +136,8 @@ cartRouter.get("/api/user/:userId/cart", async (req, res) => {
       });
     }
 
-    // Return the user's cart data
-
-    res.status(200).json({ cart: user.cart });
+    // Return the user's cart data directly as a list
+    res.status(200).json(user.cart);
   } catch (error) {
     // Handle any errors
     console.error("Error fetching user cart data:", error);
