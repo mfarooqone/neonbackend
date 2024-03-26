@@ -1,7 +1,7 @@
 const express = require("express");
 const shippingRouter = express.Router();
 
-shippingRouter.get("/api/pages/shipping", (req, res) => {
+shippingRouter.get("/api/pages/shipping-policy", (req, res) => {
   try {
     const responseText = `We provide free worldwide shipping for all orders. Our partnership with leading carriers such as DHL Express, FedEx, and UPS ensures a seamless shipping and delivery experience. However, please note that we are unable to deliver to P.O. Boxes.
   
