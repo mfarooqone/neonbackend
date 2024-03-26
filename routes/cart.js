@@ -137,6 +137,7 @@ cartRouter.get("/api/user/:userId/cart", async (req, res) => {
     }
 
     // Return the user's cart data directly as a list
+    
     res.status(200).json(user.cart);
   } catch (error) {
     // Handle any errors
