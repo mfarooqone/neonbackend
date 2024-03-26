@@ -1,7 +1,7 @@
 const express = require("express");
-const privacyRouter = express.Router();
+const contactUsRouter = express.Router();
 
-privacyRouter.get("/api/pages/contact-us", (req, res) => {
+contactUsRouter.get("/api/pages/contact-us", (req, res) => {
   try {
     const responseText = `Contact information
     Trade name: OPAY TRADING LIMITED
@@ -24,4 +24,4 @@ privacyRouter.get("/api/pages/contact-us", (req, res) => {
   }
 });
 
-module.exports = privacyRouter;
+module.exports = contactUsRouter;

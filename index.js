@@ -7,6 +7,9 @@ const cartRoute = require("./routes/cart");
 const aboutUsRouter = require("./routes/pages/about_us");
 const shippingRouter = require("./routes/policies/shipping_policy");
 const { default: mongoose } = require("mongoose");
+const contactUsRouter = require("./routes/pages/contact_us");
+const refundRouter = require("./routes/policies/refund_policy");
+const privacyRouter = require("./routes/policies/privacy_policy");
 
 /// INIT
 const PORT = 3030;
@@ -20,8 +23,17 @@ app.use(express.json());
 app.use(cors());
 app.use(authRouter);
 app.use(cartRoute);
+
+// pages
+
 app.use(aboutUsRouter);
+app.use(contactUsRouter);
+
+// policies
+
 app.use(shippingRouter);
+app.use(refundRouter);
+app.use(privacyRouter);
 
 
 
