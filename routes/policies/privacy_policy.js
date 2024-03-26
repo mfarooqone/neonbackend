@@ -3,13 +3,12 @@ const privacyRouter = express.Router();
 
 privacyRouter.get("/api/policies/privacy-policy", (req, res) => {
   try {
-    const responseText = `
-    Privacy Policy
+    const responseText = `Privacy Policy
 
-This Privacy Policy outlines the procedures and practices of NeonWill (referred to as the "Site" or "we") regarding the collection, usage, and disclosure of your Personal Information when you visit or make a purchase from our Site.
+This Privacy Policy outlines the procedures and practices of Customs Neon (referred to as the "Site" or "we") regarding the collection, usage, and disclosure of your Personal Information when you visit or make a purchase from our Site.
 
 Contact Information
-If you have any additional questions, require further information about our privacy practices, or wish to file a complaint, please reach out to us via email at info@neonwill.com or by mail using the provided details below:
+If you have any additional questions, require further information about our privacy practices, or wish to file a complaint, please reach out to us via email at info@customsneon.com or by mail using the provided details below:
 
 253～261 Hennessy Road, FLAT /RM 1502,EASEY COMMERCIAL BUILDING, Wan Chai, Hong Kong Island Hong Kong SAR
 
