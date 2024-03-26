@@ -1,7 +1,7 @@
 const express = require("express");
 const aboutUsRouter = express.Router();
 
-aboutUsRouter.get("/api/pages/aboutus", (req, res) => {
+aboutUsRouter.get("/api/pages/about-us", (req, res) => {
   try {
     const responseText = `Our Narrative
 At the end of a busy day spent fine-tuning neon lights, a team of skilled craftsmen gathered in their workshop. As they gazed at the illuminated outlines being tested and prepared for shipment, a sense of pride washed over them. These exquisite neon signs, both large and small, in various shades of white and color, in letters and shapes, were soon to be dispatched to doorsteps across the globe.
