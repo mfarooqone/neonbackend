@@ -1,7 +1,7 @@
 const express = require("express");
 const contactUsRouter = express.Router();
 
-contactUsRouter.get("/api/pages/contact-us", (req, res) => {
+contactUsRouter.get("/api/pages/contact-info", (req, res) => {
   try {
     const responseText = `Contact information
     Trade name: OPAY TRADING LIMITED
