@@ -2,6 +2,7 @@
 
 const express = require("express");
 const cors = require("cors");
+
 const { default: mongoose } = require("mongoose");
 const authRouter = require("./routes/auth");
 const cartRoute = require("./routes/cart");
@@ -12,13 +13,19 @@ const privacyRouter = require("./routes/policies/privacy_policy");
 const shippingRouter = require("./routes/policies/shipping_policy");
 const tremsRouter = require("./routes/policies/terms_of_service");
 const nodeMailerRouter = require("./routes/pages/node_mailer");
+const config = require("./config/config");
+
+
+const PORT = config.port;
+const DB_URL = config.dbUrl;
+
+
 
 
 /// INIT
-const PORT = 3030;
+
 const app = express();
-const DB =
-  "mongodb+srv://farooqone:iphonepakistaN@cluster0.yehdinj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
 
 /// middleware
 
@@ -49,7 +56,7 @@ app.use(nodeMailerRouter);
 /// connection
 
 mongoose
-  .connect(DB)
+  .connect(DB_URL)
   .then(() => {
     console.log("Connection Successful");
   })

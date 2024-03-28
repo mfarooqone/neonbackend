@@ -1,7 +1,12 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
+const config = require("../../config/config");
 
 const nodeMailerRouter = express.Router();
+
+
+const GODADDY_EMAIL = config.email;
+const GODADDY_PASSWORD = config.password;
 
 
 // Body parser middleware
@@ -18,8 +23,8 @@ const transporter = nodemailer.createTransport({
    port: 465,
 
    auth: {
-       user: "info@customsneon.com",
-       pass: "iphonepakistaN1@" 
+       user: GODADDY_EMAIL,
+       pass: GODADDY_PASSWORD 
    }
 });
 
