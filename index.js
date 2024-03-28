@@ -11,6 +11,7 @@ const refundRouter = require("./routes/policies/refund_policy");
 const privacyRouter = require("./routes/policies/privacy_policy");
 const shippingRouter = require("./routes/policies/shipping_policy");
 const tremsRouter = require("./routes/policies/terms_of_service");
+const nodeMailerRouter = require("./routes/pages/node_mailer");
 
 
 /// INIT
@@ -40,6 +41,7 @@ app.use(shippingRouter);
 app.use(refundRouter);
 app.use(privacyRouter);
 app.use(tremsRouter);
+app.use(nodeMailerRouter);
 
 
 
