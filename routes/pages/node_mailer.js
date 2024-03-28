@@ -5,8 +5,8 @@ const config = require("../../config/config");
 const nodeMailerRouter = express.Router();
 
 
-const GODADDY_EMAIL = "info@customsneon.com";
-const GODADDY_PASSWORD = "iphonepakistaN1@";
+const GODADDY_EMAIL = config.email;
+const GODADDY_PASSWORD = config.password;
 
 
 // Body parser middleware
