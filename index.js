@@ -14,6 +14,7 @@ const shippingRouter = require("./routes/policies/shipping_policy");
 const tremsRouter = require("./routes/policies/terms_of_service");
 const nodeMailerRouter = require("./routes/pages/node_mailer");
 const config = require("./config/config");
+const stripeRouter = require("./routes/stripe/stripe");
 
 
 const PORT = config.port;
@@ -49,6 +50,7 @@ app.use(refundRouter);
 app.use(privacyRouter);
 app.use(tremsRouter);
 app.use(nodeMailerRouter);
+app.use(stripeRouter);
 
 
 
