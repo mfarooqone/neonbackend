@@ -46,6 +46,11 @@ stripeRouter.post("/api/payment-intent", async (req, res) => {
      });
    }
  });
+
+ 
+
+
+
  
 
  module.exports = stripeRouter;
